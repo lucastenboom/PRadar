@@ -11,6 +11,7 @@ struct PullRequest: Decodable, Identifiable, Sendable {
     let reviewDecision: ReviewDecision?
     let mergeable: MergeableState
     let repository: Repository
+    let author: Actor?
     let commits: Connection<CommitNode>
     let myReviews: Connection<SubmittedReview>
     let reviews: Connection<Review>

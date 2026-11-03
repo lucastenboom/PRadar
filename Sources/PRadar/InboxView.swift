@@ -149,6 +149,16 @@ private struct PullRequestRow: View {
     let hasNewActivity: Bool
     let open: () -> Void
 
+    private var subtitle: String {
+        let reference = "\(pullRequest.repository.nameWithOwner) #\(pullRequest.number)"
+
+        guard let author = pullRequest.author else {
+            return reference
+        }
+
+        return "\(reference) · by \(author.login)"
+    }
+
     var body: some View {
         Button(action: open) {
             HStack(spacing: 8) {
@@ -161,7 +171,7 @@ private struct PullRequestRow: View {
                         Text(pullRequest.title)
                             .lineLimit(2)
                             .foregroundStyle(pullRequest.isDraft ? .secondary : .primary)
-                        Text("\(pullRequest.repository.nameWithOwner) #\(pullRequest.number)")
+                        Text(subtitle)
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }

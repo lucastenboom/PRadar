@@ -53,6 +53,7 @@ struct GitHubClient: Sendable {
         fragment PullRequestFields on PullRequest {
           number title url isDraft reviewDecision mergeable
           repository { nameWithOwner }
+          author { login }
           commits(last: 1) { nodes { commit { committedDate statusCheckRollup { state } } } }
           myReviews: reviews(author: $login, last: 1, states: [APPROVED, CHANGES_REQUESTED, COMMENTED, DISMISSED]) {
             nodes { submittedAt }
