@@ -2,6 +2,11 @@
 
 A native macOS menu bar app that keeps track of your GitHub pull requests — without the stale state of GitHub's own inbox.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png">
+  <img src="docs/screenshot-light.png" alt="PRadar showing pull requests grouped into Review requested, Reviewed by me, My pull requests and Ready to merge, with comment counts, approvals and check status per pull request" width="620">
+</picture>
+
 - **Review requested** — pull requests waiting for your review.
 - **Reviewed by me** — pull requests you already reviewed stay visible, so follow-up comments don't get lost.
 - **My pull requests** — with review and check status.
